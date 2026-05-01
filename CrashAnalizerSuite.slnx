@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="CrashAnalyzer.Core/CrashAnalyzer.Core.csproj" />
+  <Project Path="CrashAnalyzer.WpfApp/CrashAnalyzer.WpfApp.csproj" />
+  <Project Path="CrashGenerator.Cpp/CrashGenerator.Cpp.vcxproj" />
+</Solution>

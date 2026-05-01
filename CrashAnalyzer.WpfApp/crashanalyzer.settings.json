@@ -1,0 +1,7 @@
+{
+  "LlmBaseUrl": "http://localhost:11434",
+  "LlmModel": "llama3.1",
+  "EmbeddingModel": "nomic-embed-text",
+  "LlmTimeoutSeconds": 300,
+  "SymbolizerPath": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx86\\x86\\llvm-symbolizer.exe"
+}
