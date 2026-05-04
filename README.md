@@ -8,7 +8,7 @@ CrashAnalizerSuite analyzes Windows crash dumps (`.dmp`) and supports prompt-bas
 flowchart TD
 
     subgraph CrashGenerator["CrashGenerator.Cpp (Native Crash Producer)"]
-        CG[Crash Generator App\nC++ / Win32]
+        CG["Crash Generator App<br/>C++ / Win32"]
         CG --> DMPFILE["CrashGenerator_*.dmp"]
     end
 
@@ -19,11 +19,11 @@ flowchart TD
     end
 
     subgraph Core["CrashAnalyzer.Core"]
-        DP[DmpParser (CLRMD)]
-        RP[RagCrashAnalyzer]
-        EC[EmbeddingClient]
-        LC[LlmClient]
-        VS[VectorStore (in-memory)]
+        DP["DmpParser - CLRMD"]
+        RP["RagCrashAnalyzer"]
+        EC["EmbeddingClient"]
+        LC["LlmClient"]
+        VS["VectorStore (in-memory)"]
     end
 
     subgraph LLM["Ollama (Local Host)"]
