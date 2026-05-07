@@ -5,6 +5,7 @@
     <Grid Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
@@ -51,44 +52,61 @@
                 Click="AskButton_Click" />
         </Grid>
 
-        <StackPanel Grid.Row="1" Margin="0,12,0,0">
-            <TextBlock Name="DmpStatusTextBlock"
-                   Text="No DMP selected."
-                   TextWrapping="Wrap" />
+        <ScrollViewer Grid.Row="1"
+                      Margin="0,12,0,0"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
-            <TextBlock Name="PdbStatusTextBlock"
-                   Margin="0,4,0,0"
-                   Text="No PDB selected."
-                   TextWrapping="Wrap" />
+                <TextBlock Name="DmpStatusTextBlock"
+                       Grid.Row="0"
+                       Text="No DMP selected."
+                       TextWrapping="Wrap" />
 
-            <Grid Margin="0,8,0,0" VerticalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+                <TextBlock Name="PdbStatusTextBlock"
+                       Grid.Row="1"
+                       Margin="0,4,0,0"
+                       Text="No PDB selected."
+                       TextWrapping="Wrap" />
 
-                <ScrollViewer Grid.Column="0"
+                <ScrollViewer Grid.Row="2"
+                              Margin="0,8,0,0"
                               VerticalScrollBarVisibility="Auto"
-                              HorizontalScrollBarVisibility="Disabled"
-                              MaxHeight="140">
-                    <TextBlock Name="PromptAnswerTextBlock"
-                               Text="Prompt answer will appear here after loading a dump."
-                               TextWrapping="Wrap" />
-                </ScrollViewer>
+                              HorizontalScrollBarVisibility="Disabled">
+                    <DockPanel LastChildFill="True">
+                        <ProgressBar Name="ThinkingProgressBar"
+                                     DockPanel.Dock="Right"
+                                     Width="120"
+                                     Height="8"
+                                     Margin="10,4,0,0"
+                                     IsIndeterminate="True"
+                                     Visibility="Collapsed"
+                                     VerticalAlignment="Top" />
 
-                <ProgressBar Name="ThinkingProgressBar"
-                             Grid.Column="1"
-                             Width="120"
-                             Height="8"
-                             Margin="10,0,0,0"
-                             IsIndeterminate="True"
-                             Visibility="Collapsed"
-                             VerticalAlignment="Center" />
+                        <TextBlock Name="PromptAnswerTextBlock"
+                                   Text="Prompt answer will appear here after loading a dump."
+                                   TextWrapping="Wrap" />
+                    </DockPanel>
+                </ScrollViewer>
             </Grid>
-        </StackPanel>
+        </ScrollViewer>
+
+        <GridSplitter Grid.Row="2"
+                      Height="6"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Center"
+                      Background="#33000000"
+                      ResizeDirection="Rows"
+                      ResizeBehavior="PreviousAndNext"
+                      ShowsPreview="True" />
 
         <TextBox Name="OutputTextBox"
-                 Grid.Row="2"
+                 Grid.Row="3"
                  Margin="0,12,0,0"
                  AcceptsReturn="True"
                  TextWrapping="Wrap"
