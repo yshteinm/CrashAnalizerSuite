@@ -2,6 +2,9 @@
 
 CrashAnalizerSuite analyzes Windows crash dumps (`.dmp`) and supports prompt-based Q&A over crash data using a local LLM.
 
+## UI Preview
+![Crash Analyzer UI](docs/app-ui.png)
+
 ## Architecture
 
 ```mermaid
